@@ -3,7 +3,10 @@ package org.example.hrworker.resources;
 import javassist.NotFoundException;
 import org.example.hrworker.entities.Worker;
 import org.example.hrworker.repositories.WorkerRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,11 +20,18 @@ import java.util.List;
 @RequestMapping("/workers")
 public class WorkerResource {
 
+    //Imprime coisas no Log
+    private static Logger logger = LoggerFactory.getLogger(WorkerResource.class);
+
+    //Possuí informações sobre o contexto da aplicação
+    @Autowired
+    private Environment env;
+
     @Autowired
     private WorkerRepository workerRepository;
 
     @GetMapping
-    public ResponseEntity<List<Worker>> buscarTodos(){
+    public ResponseEntity<List<Worker>> buscarTodos() {
         List<Worker> workers = workerRepository.findAll();
 
         return new ResponseEntity<>(workers, HttpStatus.OK);
@@ -29,6 +39,8 @@ public class WorkerResource {
 
     @GetMapping("/{id}")
     public ResponseEntity<Worker> buscarPorId(@PathVariable Long id) throws NotFoundException {
+        logger.info("PORT = " + env.getProperty("local.server.port"));
+
         Worker worker = workerRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Worker não encontrado"));
 
