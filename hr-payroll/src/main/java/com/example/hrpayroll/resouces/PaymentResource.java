@@ -27,7 +27,7 @@ public class PaymentResource {
     }
 
     public ResponseEntity<Payment> buscarPaymentAlternativo(Long workerId, Integer days) {
-        Payment payment = new Payment("Renan", 400.0, days);
+        Payment payment = new Payment("Usuário Alternativo", 400.0, days);
 
         return new ResponseEntity<>(payment, HttpStatus.OK);
     }
