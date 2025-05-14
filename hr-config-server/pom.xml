@@ -41,11 +41,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>io.github.cdimascio</groupId>
-			<artifactId>dotenv-java</artifactId>
-			<version>3.0.0</version>
-		</dependency>
 	</dependencies>
     <dependencyManagement>
         <dependencies>
@@ -57,7 +52,6 @@
                 <scope>import</scope>
             </dependency>
         </dependencies>
-
 	</dependencyManagement>
 
 	<build>
