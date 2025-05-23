@@ -1,0 +1,11 @@
+POST http://localhost:8765/hr-oauth/oauth/token
+Authorization: Basic myappname123 secret123
+Content-Type: application/x-www-form-urlencoded
+
+username = renan@gmail.com &
+password = senha123 &
+grant_type = password
+
+
+###
+GET http://localhost:8765/hr-oauth/users/search?email=renan@gmail.com
