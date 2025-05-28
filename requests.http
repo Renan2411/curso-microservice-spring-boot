@@ -1,5 +1,5 @@
 POST http://localhost:8765/hr-oauth/oauth/token
-Authorization: Basic myappname123 secret123
+Authorization: Basic myappname123 myappsecret123
 Content-Type: application/x-www-form-urlencoded
 
 username = renan@gmail.com &
@@ -9,7 +9,7 @@ grant_type = password
 
 ###
 GET http://localhost:8765/hr-worker/workers
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDgzOTMzMDQsInVzZXJfbmFtZSI6InJlbmFuQGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjpbIlJPTEVfT1BFUkFUT1IiXSwianRpIjoiZTIzZjVmNDItMDFmOC00OWU1LWE4NDgtOGQ3NjQ1OTNlMWE3IiwiY2xpZW50X2lkIjoibXlhcHBuYW1lMTIzIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.k-l6r94DfAer7ggRmf3HjUjWQxz0sMtZr9nC7T3zlZM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDg0Nzg5MjEsInVzZXJfbmFtZSI6InJlbmFuQGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjpbIlJPTEVfT1BFUkFUT1IiXSwianRpIjoiY2U4Mjg4YjQtZGFiYy00YjFmLWEzYjctZTc0MDMxZWE1NDE4IiwiY2xpZW50X2lkIjoibXlhcHBuYW1lMTIzIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.BepQA2Ih_sJVkRkhlX9OALBeXm3V_c8K0zn7KHjZk5A
 
 ###
 GET http://localhost:8765/hr-payroll/payments/1/days/10
